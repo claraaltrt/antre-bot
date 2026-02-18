@@ -1,7 +1,9 @@
-import os, json, random, asyncio
-import discord
-from discord.ext import commands
-from dotenv import load_dotenv
+load_dotenv()
+TOKEN = os.gentenv("DISCORD_TOKEN")
+
+if not TOKEN:
+    print(Token non trouvé dans l'environnement")
+    exit()
 
 # =========
 # Setup
@@ -172,3 +174,4 @@ async def porte000(ctx):
     )
 
 bot.run(TOKEN)
+
