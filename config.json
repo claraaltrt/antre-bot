@@ -15,7 +15,13 @@
   "mute_minutes": 2,
   "possessed_interval_hours": 24,
   "possessed_duration_minutes": 30,
-  "immersive_voice_channel_ids": [1473695252895498443, 1473695313750654997, 1473695371459821618, 1473695455916593327, 1473695515924365506],
+  "immersive_voice_channel_ids": [
+    1473695252895498443,
+    1473695313750654997,
+    1473695371459821618,
+    1473695455916593327,
+    1473695515924365506
+  ]
   "immersive_text_channel_id": 1473713078406217912,
   "level_channel_id": 1473785709172359279,
   "xp_cooldown_seconds": 30,
@@ -26,8 +32,10 @@
     "20": 1473784883737395210,
     "30": 1473784924711424144
   }
+  "economy" {
   "currency_name":"Sang",
   "money_per_message_min":1,
   "money_per_message_max":3,
   "daily_amount":250
+  }
 }
