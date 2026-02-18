@@ -180,55 +180,23 @@ async def creepy_loop():
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send("🩸 Je suis là.")
-
-@bot.command()
-async def night(ctx):
-    await ctx.send("🌘 𝐋𝐀 𝐍𝐔𝐈𝐓 𝐒𝐀𝐍𝐒 𝐅𝐈𝐍 approche...")
-
-@bot.command()
-async def doors(ctx):
-    await ctx.send(
-        "🚪 **DOORS**\n"
-        "• Cache-toi quand ça clignote\n"
-        "• Écoute les sons\n"
-        "• Ne panique pas"
-    )
-
-@bot.command()
-async def mimic(ctx):
-    await ctx.send(
-        "🌲 **The Mimic**\n"
-        "• Reste en groupe\n"
-        "• Observe les ombres\n"
-        "• Avance prudemment"
-    )
-
-@bot.command()
-async def intruder(ctx):
-    await ctx.send(
-        "📺 **The Intruder**\n"
-        "• Ferme les portes\n"
-        "• Surveille les signaux\n"
-        "• Éteins au bon moment"
-    )
-
-@bot.command()
-async def session(ctx, minutes: int = 10):
-    await ctx.send(
-        f"🎙️ Session horreur dans {minutes} minutes.\n"
-        "🔦 Préparez-vous."
-    )
+    await ctx.send("🏓 Pong !")
 
 @bot.command()
 async def aide(ctx):
-    await ctx.send(
-        "🕯️ Commandes :\n"
-        "!ping !night !doors !mimic !intruder !session"
-    )
+    await ctx.send("Menu d'aide")
+
+@bot.command()
+async def night(ctx):
+    await ctx.send("La nuit tombe...")
+
+@bot.command()
+async def doors(ctx):
+    await ctx.send("Conseils DOORS")
 
 # =========================
 # RUN
 # =========================
 
 bot.run(TOKEN)
+
