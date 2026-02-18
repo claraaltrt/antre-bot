@@ -181,8 +181,53 @@ async def porte000(ctx):
         "📡 Signal instable…\n"
         "👁️ Quelqu’un est déjà de l’autre côté."
     )
+    @bot.command()
+async def ping(ctx):
+    await ctx.send("🩸 Je suis là… et j’écoute.")
+
+@bot.command()
+async def night(ctx):
+    await ctx.send("🌘 𝐋𝐀 𝐍𝐔𝐈𝐓 𝐒𝐀𝐍𝐒 𝐅𝐈𝐍 … approche.\n🔦 Restez groupés.")
+
+@bot.command()
+async def doors(ctx):
+    await ctx.send(
+        "🚪 **DOORS** — Conseils :\n"
+        "• Écoute les sons (Rush/Ambush)\n"
+        "• Cache-toi vite dès que ça clignote\n"
+        "• Garde une lampe pour les couloirs\n"
+        "• Ne panique pas… c’est là qu’ils te prennent."
+    )
+
+@bot.command()
+async def mimic(ctx):
+    await ctx.send(
+        "🌲 **The Mimic** — Conseils :\n"
+        "• Joue en équipe, annonce tout\n"
+        "• Fais attention aux faux bruits\n"
+        "• Ne cours pas au hasard\n"
+        "• Si tu vois une silhouette immobile… recule."
+    )
+
+@bot.command()
+async def intruder(ctx):
+    await ctx.send(
+        "📺 **The Intruder** — Règles :\n"
+        "• Ferme les portes\n"
+        "• Éteins quand il faut\n"
+        "• Observe les signaux\n"
+        "• Si l’écran se fige… il est proche."
+    )
+
+@bot.command()
+async def aide(ctx):
+    await ctx.send(
+        "🕯️ **Commandes** :\n"
+        "`!ping` `!night` `!doors` `!mimic` `!intruder` `!session 10` `!porte000`"
+    )
 
 # =========================
 # Run
 # =========================
 bot.run(TOKEN)
+
