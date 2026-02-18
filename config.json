@@ -1,0 +1,11 @@
+{
+  "guild_id": 1473670821364105364,
+  "verify_channel_id": 1473692591529787492,
+  "verify_message_id": 1473714115292823677,
+  "verified_role_id": 1473712310580416604,
+  "welcome_channel_id": 1473692627244159060,
+  "log_channel_id": 1473712861619556545,
+  "creepy_channel_id": 1473713078406217912,
+  "verify_emoji": "🩸",
+  "creepy_interval_minutes": 240
+}
