@@ -24,13 +24,10 @@
     "5": 1473784795107426416,
     "10": 1473784839298744492,
     "20": 1473784883737395210,
-    "30": 1473784924711424144,
+    "30": 1473784924711424144
   }
   "currency_name":"Sang",
   "money_per_message_min":1,
-  "money_per_message_max":3
+  "money_per_message_max":3,
   "daily_amount":250
 }
-
-
-
