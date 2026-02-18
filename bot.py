@@ -63,8 +63,6 @@ CREEPY_LINES = [
     "🔦 Si la lumière clignote… baisse le son."
 ]
 
-]
-
 # =========================
 # Helpers
 # =========================
@@ -237,5 +235,6 @@ async def aide(ctx):
 # Run
 # =========================
 bot.run(TOKEN)
+
 
 
