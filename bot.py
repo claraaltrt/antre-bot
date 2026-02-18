@@ -4,7 +4,7 @@ load_dotenv()
 TOKEN = os.gentenv("DISCORD_TOKEN")
 
 if not TOKEN:
-    print(Token not found in environnement")
+    print("Token not found in environnement")
     exit()
 
 # =========
@@ -176,5 +176,6 @@ async def porte000(ctx):
     )
 
 bot.run(TOKEN)
+
 
 
