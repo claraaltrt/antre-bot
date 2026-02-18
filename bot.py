@@ -55,7 +55,14 @@ CREEPY_LINES = [
     "🌑 Ne regarde pas la liste des membres trop longtemps.",
     "👁️ Il y a un compte ici… qui n’appartient à personne.",
     "🩸 Une porte s’est ouverte. Personne ne l’a touchée.",
-    "🔦 Si tu entends ton nom en vocal… quitte immédiatement."
+    "🔦 Si tu entends ton nom en vocal… quitte immédiatement.",
+    "📡 Un souffle traverse les couloirs.",
+    "🌑 Quelqu’un observe la porte 000.",
+    "👁️ Ne fixe pas ton écran trop longtemps.",
+    "🩸 Ils entendent quand tu ris.",
+    "🔦 Si la lumière clignote… baisse le son."
+]
+
 ]
 
 # =========================
@@ -230,4 +237,5 @@ async def aide(ctx):
 # Run
 # =========================
 bot.run(TOKEN)
+
 
