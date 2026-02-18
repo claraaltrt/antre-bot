@@ -510,7 +510,44 @@ async def open(ctx):
             return
         await ctx.send(f"👹 **MONSTRE !** Tu perds 1 vie. ❤️ Vies restantes: **{s['hp']}** (Porte {door})")
 
+@bot.command()
+async def cmds(ctx):
+    embed = discord.Embed(
+        title="📜 Commandes du Bot",
+        description="Voici toutes les commandes disponibles :",
+        color=0x8B0000
+    )
+
+    embed.add_field(
+        name="🟢 Général",
+        value="`!ping`\n`!aide`\n`!cmds`",
+        inline=False
+    )
+
+    embed.add_field(
+        name="🏆 Niveaux / XP",
+        value="`!rank`\n`!rank @membre`\n`!leaderboard`",
+        inline=False
+    )
+
+    embed.add_field(
+        name="💰 Économie",
+        value=f"`!money`\n`!money @membre`\n`!daily`\n(Monnaie : {CURRENCY_NAME})",
+        inline=False
+    )
+
+    embed.add_field(
+        name="🎮 Mini-jeu DOORS",
+        value="`!doorsstart`\n`!open`\n`!hide`\n`!doorsstop`",
+        inline=False
+    )
+
+    embed.set_footer(text="L’ANTRE DES DAMNÉS • La Nuit Sans Fin")
+
+    await ctx.send(embed=embed)
+
 # ======================================================
 # RUN
 # ======================================================
 bot.run(TOKEN)
+
