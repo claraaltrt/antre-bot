@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 load_dotenv()
-TOKEN = os.gentenv("DISCORD_TOKEN")
+TOKEN = os.getenv("DISCORD_TOKEN")
 
 if not TOKEN:
     print("Token not found in environnement")
@@ -176,6 +176,7 @@ async def porte000(ctx):
     )
 
 bot.run(TOKEN)
+
 
 
 
