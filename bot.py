@@ -193,10 +193,89 @@ async def night(ctx):
 @bot.command()
 async def doors(ctx):
     await ctx.send("Conseils DOORS")
+import time
+import json
+import random
 
+# Charger config
+with open("config.json", "r") as f:
+    CFG = json.load(f)
+
+XP_FILE = "xp_data.json"
+
+# Charger ou créer fichier XP
+try:
+    with open(XP_FILE, "r") as f:
+        xp_data = json.load(f)
+except:
+    xp_data = {}
+
+last_message = {}
+
+def xp_needed(level):
+    return 100 * level
+
+@bot.event
+async def on_message(message):
+    if message.author.bot:
+        return
+
+    user_id = str(message.author.id)
+    now = time.time()
+
+    # Anti spam cooldown
+    if user_id in last_message:
+        if now - last_message[user_id] < CFG["xp_cooldown_seconds"]:
+            await bot.process_commands(message)
+            return
+
+    last_message[user_id] = now
+
+    if user_id not in xp_data:
+        xp_data[user_id] = {"xp": 0, "level": 0}
+
+    xp_gain = random.randint(5, 15)
+    xp_data[user_id]["xp"] += xp_gain
+
+    level = xp_data[user_id]["level"]
+    xp = xp_data[user_id]["xp"]
+
+    if xp >= xp_needed(level + 1):
+        xp_data[user_id]["level"] += 1
+        new_level = xp_data[user_id]["level"]
+
+        await level_up(message.author, new_level)
+
+    with open(XP_FILE, "w") as f:
+        json.dump(xp_data, f, indent=4)
+
+    await bot.process_commands(message)
+
+
+async def level_up(member, level):
+    guild = member.guild
+    level_channel = guild.get_channel(CFG["level_channel_id"])
+
+    # Retirer anciens rôles niveaux
+    for lvl, role_id in CFG["levels"].items():
+        role = guild.get_role(role_id)
+        if role in member.roles:
+            await member.remove_roles(role)
+
+    # Donner nouveau rôle si existant
+    if str(level) in CFG["levels"]:
+        role_id = CFG["levels"][str(level)]
+        role = guild.get_role(role_id)
+        if role:
+            await member.add_roles(role)
+
+    if level_channel:
+        await level_channel.send(
+            f"🩸 {member.mention} vient d'atteindre le **niveau {level}** !"
+        )
+        
 # =========================
 # RUN
 # =========================
 
 bot.run(TOKEN)
-
